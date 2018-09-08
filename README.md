@@ -1,13 +1,16 @@
 # IonPress
 
+![](docs/images/readme-logo.png) <br />
+
 A Progressive Web App (PWA) built with Ionic, Angular, and the WordPress REST API.
-The goal of this project is to provide service-oriented front-end to WordPress for desktop and mobile.
-Use it to create a unique experience for your website or blog and learn about modern web development 
+The goal of this project is to provide a service-oriented front-end to WordPress for desktop and mobile.
+Use it to create a unique experience for your website or blog and to learn about modern web development 
 using popular frameworks and tools.
 
 To learn how this project was created from beginning to end, see the companion developer log:
 
-(https://codyburleson.com/pwa-with-ionic-angular-and-wordpress-rest-api)
+[How to build a PWA with Ionic, Angular, and the WordPress REST API](https://codyburleson.com/pwa-with-ionic-angular-and-wordpress-rest-api)
+
 
 ## Getting started
 
@@ -16,6 +19,15 @@ To learn how this project was created from beginning to end, see the companion d
 - `cd` into the project root directory
 - Run `npm install` to install the dependencies, which are defined in `package.json`
 - Run `ionic serve` to run the app and open your browser to (http://localhost:8100/home).
+
+## WordPress requirements
+
+The WordPress REST API endpoint, `/wp-json/wp/v2`, is available when you set your site to use the custom permalink 
+setting. We recommend the `Post name` option (`/%postname%/`) as that is the option this app is currently developed and 
+tested against. After saving the permalink settings, you should be able to verify a JSON response is returned from the 
+following URL:
+
+http://<host>:<port>/wp-json/wp/v2/posts
 
 ## Setup a WordPress development environment
 
@@ -32,6 +44,17 @@ so you will only find it after running the `docker-compose up -d` command. Of co
 own LAMP stack, MAMP, production instance or whatever.
 
 Point your browser to http://localhost:8080/ to complete the WordPress setup.
+
+The WordPress REST API endpoint, `/wp-json/wp/v2`, is available when you set your site to use the custom permalink 
+setting. We recommend the `Post name` option (`/%postname%/`) as that is the option this app is currently developed and 
+tested against. After saving the permalink settings, you should be able to verify a JSON response is returned from the 
+following URL:
+
+http://localhost:8080/wp-json/wp/v2/posts
+
+### Recommended WordPress plugins
+
+- [FakerPress](https://wordpress.org/plugins/fakerpress/) - to create dummy data for development purposes
 
 
 ## Command reference

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+    production: true,
+    endpointURL: 'http://localhost:8080/wp-json/'
 };

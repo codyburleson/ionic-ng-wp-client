@@ -9,7 +9,7 @@ using popular frameworks and tools.
 
 To learn how this project was created from beginning to end, see the companion developer log:
 
-[How to build a PWA with Ionic, Angular, and the WordPress REST API](https://codyburleson.com/pwa-with-ionic-angular-and-wordpress-rest-api)
+[How to build a PWA with Ionic, Angular, and the WordPress REST API](https://codyburleson.com/pwa-with-ionic-angular-wordpress-api-1)
 
 
 ## Getting started
@@ -66,4 +66,5 @@ http://localhost:8080/wp-json/wp/v2/posts
 | `docker-compose up -d` | Start the local WordPress dev environment (at http://localhost:8080/) |
 | `docker-compose logs -f` | Follow the container logs |
 | `docker-compose stop` | Stop the local WordPress dev environment (Docker containers); restart with `docker-compose up -d` |
+| `ng test` | Execute the Jasmine tests |
 

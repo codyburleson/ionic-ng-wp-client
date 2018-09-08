@@ -10,7 +10,13 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the
-    <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      <span [innerHTML]="">{{item.title.rendered}}</span>
+      <div class="item-note" slot="end">
+        {{item.id}}
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>

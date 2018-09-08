@@ -9,7 +9,7 @@ using popular frameworks and tools.
 
 To learn how this project was created from beginning to end, see the companion developer log:
 
-[How to build a PWA with Ionic, Angular, and the WordPress REST API](https://codyburleson.com/pwa-with-ionic-angular-wordpress-api-1)
+[How to build a PWA with Ionic, Angular, and the WordPress REST API – Part 1](https://codyburleson.com/pwa-with-ionic-angular-wordpress-api-1)
 
 
 ## Getting started

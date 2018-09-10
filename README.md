@@ -18,7 +18,8 @@ To learn how this project was created from beginning to end, see the companion d
 - Clone this repo from GitHub
 - `cd` into the project root directory
 - Run `npm install` to install the dependencies, which are defined in `package.json`
-- Run `ionic serve` to run the app and open your browser to (http://localhost:8100/home).
+- Configure `src/environments/environment.ts` and `environment.prod.ts` to suit your environment and preferences
+- Run `ionic serve` to run the app and open your browser to http://localhost:8100/home
 
 ## WordPress requirements
 

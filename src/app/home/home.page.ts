@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../shared/data.service';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,7 @@ import {DataService} from '../shared/data.service';
 export class HomePage implements OnInit {
 
     items: any[];
+    dateFormat = environment.dateFormat;
 
     constructor(public dataService: DataService) {
     }

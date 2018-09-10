@@ -10,13 +10,15 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      <span [innerHTML]="">{{item.title.rendered}}</span>
-      <div class="item-note" slot="end">
-        {{item.id}}
-      </div>
-    </ion-item>
-  </ion-list>
+
+  <ion-card *ngFor="let item of items">
+    <ion-card-header>
+      <ion-card-subtitle>{{ item.date | date:dateFormat }}</ion-card-subtitle>
+      <ion-card-title [innerHTML]="item.title.rendered"></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div [innerHTML]="item.excerpt.rendered"></div>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

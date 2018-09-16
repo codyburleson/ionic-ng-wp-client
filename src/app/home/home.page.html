@@ -19,7 +19,13 @@
     </ion-card-header>
     <ion-card-content>
       <div [innerHTML]="item.excerpt.rendered"></div>
+      <div>
+        <ion-button href="/{{item.slug}}" routerDirection="root" color="primary" size="small">Read more...</ion-button>
+      </div>
+      Posted in W<br/>
+      Tagged X, Y, Z
     </ion-card-content>
+
   </ion-card>
 
 </ion-content>

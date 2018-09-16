@@ -44,4 +44,8 @@ export class DataService {
         return this.items;
     }
 
+    getPostBySlug(slug): any {
+        return this.items.find(item => item.slug === slug);
+    }
+
 }

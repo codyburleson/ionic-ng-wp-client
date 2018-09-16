@@ -1,1 +1,7 @@
-
+ion-card p, ion-button {
+  margin-bottom:16px !important;
+}
+/*  Hide WordPress Read More... */
+p.link-more {
+  display:none;
+}

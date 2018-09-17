@@ -1,6 +1,7 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {DataService} from '../shared/data.service';
 import {environment} from '../../environments/environment';
+import {InfiniteScroll} from '@ionic/angular';
 
 @Component({
     selector: 'app-home',
@@ -10,6 +11,8 @@ import {environment} from '../../environments/environment';
 })
 export class HomePage implements OnInit {
 
+    @ViewChild(InfiniteScroll) infiniteScroll: InfiniteScroll;
+
     items: any[];
     dateFormat = environment.dateFormat;
 
@@ -17,11 +20,25 @@ export class HomePage implements OnInit {
     }
 
     ngOnInit() {
-        console.log('> ngOnInit');
+        console.log('> HomePage.ngOnInit');
         this.dataService.getPosts().subscribe((data: any[]) => {
             this.items = data;
-            console.log('ngOnInit() > items: %o', this.items);
         });
+    }
+
+    getMorePosts(evt) {
+        this.dataService.getMorePosts().subscribe((data: any[]) => {
+            this.items = data;
+            this.infiniteScroll.complete();
+        });
+    }
+
+    infiniteScrollDisabled() {
+        if (this.dataService.hasMorePosts()) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }

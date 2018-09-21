@@ -30,6 +30,9 @@ following URL:
 
 http://<host>:<port>/wp-json/wp/v2/posts
 
+You must also install the [JWT Authentication for WP REST API plugin](https://es.wordpress.org/plugins/jwt-authentication-for-wp-rest-api/). 
+Read and follow instructions for installing and configuring the plugin very carefully!
+
 ## Setup a WordPress development environment
 
 To setup a local WordPress instance for development purposes, run the following command from within

@@ -7,10 +7,14 @@ The goal of this project is to provide a service-oriented front-end to WordPress
 Use it to create a unique experience for your website or blog and to learn about modern web development 
 using popular frameworks and tools.
 
-To learn how this project was created from beginning to end, see the companion developer log:
+To learn how this project was created from beginning to end, see the companion developer log,
+How to build a PWA with Ionic, Angular, and the WordPress REST API:
 
-[How to build a PWA with Ionic, Angular, and the WordPress REST API – Part 1](https://codyburleson.com/pwa-with-ionic-angular-wordpress-api-1)
-
+- [Part 1](https://codyburleson.com/pwa-with-ionic-angular-wordpress-api-1)
+- [Part 2](https://codyburleson.com/pwa-with-ionic-angular-wordpress-api-1)
+- [Part 3](https://codyburleson.com/pwa-with-ionic-angular-wordpress-api-1)
+- [Part 4](https://codyburleson.com/pwa-with-ionic-angular-wordpress-api-1)
+- [Part 5](https://codyburleson.com/pwa-with-ionic-angular-wordpress-api-1)
 
 ## Getting started
 
@@ -28,7 +32,7 @@ setting. We recommend the `Post name` option (`/%postname%/`) as that is the opt
 tested against. After saving the permalink settings, you should be able to verify a JSON response is returned from the 
 following URL:
 
-http://<host>:<port>/wp-json/wp/v2/posts
+`http://<host>:<port>/wp-json/wp/v2/posts`
 
 You must also install the [JWT Authentication for WP REST API plugin](https://es.wordpress.org/plugins/jwt-authentication-for-wp-rest-api/). 
 Read and follow instructions for installing and configuring the plugin very carefully!
@@ -56,7 +60,7 @@ following URL:
 
 http://localhost:8080/wp-json/wp/v2/posts
 
-### Recommended WordPress plugins
+### Other recommended WordPress plugins
 
 - [FakerPress](https://wordpress.org/plugins/fakerpress/) - to create dummy data for development purposes
 

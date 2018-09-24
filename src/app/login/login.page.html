@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <div class="alert alert-danger" role="alert" *ngIf="error_message">{{error_message}}</div>
+  <form [formGroup]="login_form" (ngSubmit)="login(login_form.value)">
+    <ion-item>
+      <ion-label color="primary">Username</ion-label>
+      <ion-input type="text" formControlName="username" placeholder="Enter username" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Password</ion-label>
+      <ion-input type="password" formControlName="password" placeholder="Enter password" required></ion-input>
+    </ion-item>
+    <ion-button expand="full"  type="submit">Login</ion-button>
+  </form>
 </ion-content>

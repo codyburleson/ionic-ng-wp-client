@@ -5,6 +5,7 @@ import {HttpClient, HttpResponse} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import {of} from 'rxjs/observable/of';
 import {Observable} from 'rxjs';
+import {AuthenticationService} from './authentication.service';
 
 const ENDPOINT_URL = environment.endpointURL;
 
@@ -17,19 +18,27 @@ export class DataService {
     page = 1;
     totalPages = 1;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, public authenticationService: AuthenticationService) {
     }
 
     /**
      * Gets a page of posts or all posts formerly fetched
      */
     getPosts(): any {
-        console.log('> DataService.getPosts');
         if (this.items.length > 0) {
             return of(this.items);
         } else {
-            return this.http.get(ENDPOINT_URL + 'wp/v2/posts?_embed', {observe: 'response'})
-                .map(this.processPostData, this);
+
+            const user = this.authenticationService.getUser();
+            if (user) {
+                return this.http.get(ENDPOINT_URL + 'wp/v2/posts?_embed&status=any&token=' + user.token,
+                    {observe: 'response', headers: {'Authorization': 'Bearer ' + user.token}})
+                    .map(this.processPostData, this);
+            } else {
+                return this.http.get(ENDPOINT_URL + 'wp/v2/posts?_embed', {observe: 'response'})
+                    .map(this.processPostData, this);
+            }
+
         }
     }
 
